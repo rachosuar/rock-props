@@ -1,11 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Navbarnew from "./components/Navbar";
+import "./App.scss";
+import Navbar from "./components/Navbar/Navbar";
+import ItemListContainer from "./components/ItemsListContainer";
 
 function App() {
   return (
     <div className="App">
-      <Navbarnew />
+      <Navbar />
+      <ItemListContainer
+        className="itemlist"
+        greeting="BIENVENIDO"
+        texto="COMING SOON..."
+      />
     </div>
   );
 }
