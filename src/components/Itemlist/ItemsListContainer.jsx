@@ -1,9 +1,9 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
-import slide1 from "../img/firstslide.jpg";
-import slide2 from "../img/secondslide.jpg";
-import slide3 from "../img/thirdslide.jpg";
+import slide1 from "../../img/firstslide.jpg";
+import slide2 from "../../img/secondslide.jpg";
+import slide3 from "../../img/thirdslide.jpg";
 
 const ItemListContainer = ({ greeting, texto }) => {
   console.log(greeting);
