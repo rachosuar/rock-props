@@ -1,14 +1,32 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+import { Carousel, Container, Row, Col } from "react-bootstrap";
 
 import slide1 from "../../img/firstslide.jpg";
 import slide2 from "../../img/secondslide.jpg";
 import slide3 from "../../img/thirdslide.jpg";
+import Counter from "./Counter";
+import producta from "../../img/producta.jpg";
+// import productb from "../../img/productb.jpg";
+// import productg from "../../img/productg.jpg";
 
-const ItemListContainer = ({ greeting, texto }) => {
-  console.log(greeting);
+const ItemListContainer = ({ greeting, texto, addToCart }) => {
   return (
     <div>
+      <Container fluid={true}>
+        <Row xl={true}>
+          <Col>
+            <Counter
+              stock={5}
+              count={1}
+              onAdd={(counter) => {
+                addToCart(counter);
+              }}
+              imagen={producta}
+            />{" "}
+          </Col>
+        </Row>
+      </Container>
+
       <h3 className="greeting"> {greeting}</h3>
 
       <h1>{texto}</h1>

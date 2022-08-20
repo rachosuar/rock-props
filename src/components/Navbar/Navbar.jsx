@@ -7,7 +7,7 @@ import { NavDropdown } from "react-bootstrap";
 import logo from "../../img/logo.jpg";
 import Cartwidget from "./CartWiget";
 
-const Navbars = () => {
+const Navbars = ({ carrito }) => {
   return (
     <>
       <Navbar bg="dark" variant="dark" sticky="top">
@@ -36,7 +36,7 @@ const Navbars = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Cartwidget />
+          <Cartwidget carrito={carrito} />
         </Container>
       </Navbar>
     </>

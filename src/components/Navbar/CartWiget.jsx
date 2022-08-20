@@ -1,17 +1,22 @@
 import React from "react";
 import cart from "../../img/cart.svg";
+import { Badge } from "react-bootstrap";
 
-const Cartwidget = () => {
+const Cartwidget = ({ carrito }) => {
   return (
     <div className="cartwidget">
       <img
         src={cart}
-        width="30"
-        height="30"
+        width="45"
+        height="45"
         className="d-inline-block "
         alt="Shopping Cart"
       />
-      <p className="cartnumber">0</p>
+      {carrito !== 0 ? (
+        <Badge bg="primary">{carrito}</Badge>
+      ) : (
+        <Badge bg="secondary">{carrito}</Badge>
+      )}
     </div>
   );
 };
