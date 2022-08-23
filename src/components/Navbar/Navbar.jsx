@@ -10,7 +10,7 @@ import Cartwidget from "./CartWiget";
 const Navbars = ({ carrito }) => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" sticky="top">
+      <Navbar variant="light" sticky="top">
         <Container>
           <Navbar.Brand href="#home">
             ROCK&PROPS
@@ -18,21 +18,18 @@ const Navbars = ({ carrito }) => {
               src={logo}
               width="30"
               height="30"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top mx-2"
               alt="rock$prop"
             />
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
             <NavDropdown title="Menu" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#productos">Productos</NavDropdown.Item>
-              <NavDropdown.Item href="#talles">
-                Tabla de talles
-              </NavDropdown.Item>
-              <NavDropdown.Item href="FAQ">FAQ</NavDropdown.Item>
+              <NavDropdown.Item href="#musica">MUSICA</NavDropdown.Item>
+              <NavDropdown.Item href="#rock">ROCK</NavDropdown.Item>
+              <NavDropdown.Item href="#movies">MOVIES</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#colecciones">
-                Colecciones
+              <NavDropdown.Item href="#tablatalles">
+                TABLA DE TALLES
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

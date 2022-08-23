@@ -4,18 +4,22 @@ import { Carousel, Container, Row, Col } from "react-bootstrap";
 import slide1 from "../../img/firstslide.jpg";
 import slide2 from "../../img/secondslide.jpg";
 import slide3 from "../../img/thirdslide.jpg";
-import Counter from "./Counter";
+import Counter from "../Counter/Counter";
 import producta from "../../img/producta.jpg";
 // import productb from "../../img/productb.jpg";
 // import productg from "../../img/productg.jpg";
 
-const ItemListContainer = ({ greeting, texto, addToCart }) => {
+const ItemListContainer = ({ greeting, texto }) => {
+  let addToCart = (counter) => {
+    alert(`${counter} items added`);
+  };
   return (
     <div>
-      <Container fluid={true}>
-        <Row xl={true}>
+      <Container fluid="md">
+        <Row xl="auto">
           <Col>
             <Counter
+              className="margin-m"
               stock={5}
               count={1}
               onAdd={(counter) => {
@@ -26,10 +30,6 @@ const ItemListContainer = ({ greeting, texto, addToCart }) => {
           </Col>
         </Row>
       </Container>
-
-      <h3 className="greeting"> {greeting}</h3>
-
-      <h1>{texto}</h1>
 
       <Carousel interval="5000">
         <Carousel.Item>
