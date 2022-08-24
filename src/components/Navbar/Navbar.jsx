@@ -10,7 +10,7 @@ import Cartwidget from "./CartWiget";
 const Navbars = ({ carrito }) => {
   return (
     <>
-      <Navbar variant="light" sticky="top">
+      <Navbar variant="light">
         <Container>
           <Navbar.Brand href="#home">
             ROCK&PROPS

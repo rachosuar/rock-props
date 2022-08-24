@@ -1,0 +1,28 @@
+.card {
+  background-image: linear-gradient(to right bottom, darkgray, lightgrey),
+    url("../../img/logo.jpg");
+  width: 23rem;
+  margin: 1rem;
+  max-height: 55rem;
+
+  transition: transform 0.35s ease-in-out;
+}
+.card__name {
+  color: rgb(29, 29, 149);
+  background-color: darkgray;
+  border: 1px solid blue;
+  border-radius: 10px;
+}
+.pricerow {
+  align-items: center;
+}
+.pricetag {
+  color: rgb(61, 49, 224);
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: silver;
+  border-radius: 500px;
+  padding: 1.5rem;
+  margin-top: 5rem;
+  box-shadow: 1 1.5rem 4rem black;
+}

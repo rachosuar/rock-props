@@ -9,11 +9,7 @@ function App() {
   return (
     <div className="App">
       <Navbar carrito={carrito} />
-      <ItemListContainer
-        className="itemlist"
-        greeting="BIENVENIDO"
-        texto="COMING SOON..."
-      />
+      <ItemListContainer className="itemlist" />
     </div>
   );
 }
