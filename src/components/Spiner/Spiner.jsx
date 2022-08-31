@@ -11,7 +11,10 @@ const Spiner = ({ stock, count, onAdd, imagen, nombre }) => {
             margin: "1rem",
             height: "30rem",
             blur: "10px",
-            transition: "all 3s",
+            transition: "margin-left 4s ease-in-out 1s",
+            borderRadius: "30px",
+            border: "2px solid blue",
+            boxShadow: "5px 5px 10px black",
           }}
         >
           <Card.Body>
