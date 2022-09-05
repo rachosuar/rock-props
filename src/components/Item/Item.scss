@@ -3,12 +3,21 @@
   width: 23rem;
   margin: 1rem;
   max-height: 55rem;
+  border-radius: 30px;
+  border: 2px solid blue;
+  box-shadow: 5px 5px 10px black;
 
-  transition: transform 0.35s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
-:hover {
-  background-image: linear-gradient(to left top, black lightgrey);
+.cardstyle:hover {
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(54, 52, 52),
+    rgb(85, 89, 220)
+  );
+  transform: scale(105%);
 }
+
 .card__name {
   color: rgb(29, 29, 149);
   background-color: darkgray;

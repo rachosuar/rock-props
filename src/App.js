@@ -1,7 +1,10 @@
 import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemlistContainer/ItemsListContainer";
+import Cart from "./components/Cart/Cart";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Tablatalles from "./components/Tablatalles/Tablatalles";
 
 import React, { useState } from "react";
 function App() {
@@ -9,9 +12,26 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar carrito={carrito} />
-      <ItemListContainer className="itemlist" />
-      <ItemDetailContainer />
+      <BrowserRouter>
+        <Navbar carrito={carrito} />
+        <Routes>
+          <Route
+            path="/"
+            element={<ItemListContainer className="itemlist" />}
+          />
+          <Route
+            path="/categoria/:id"
+            element={<ItemListContainer className="itemlist" />}
+          />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/tablatalles" element={<Tablatalles />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="*"
+            element={<ItemListContainer className="itemlist" />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
 
-const Spiner = ({ stock, count, onAdd, imagen, nombre }) => {
+const Spiner = ({ nombre }) => {
   return (
     <>
       <Col>
@@ -10,8 +10,6 @@ const Spiner = ({ stock, count, onAdd, imagen, nombre }) => {
             width: "23rem",
             margin: "1rem",
             height: "30rem",
-            blur: "10px",
-            transition: "margin-left 4s ease-in-out 1s",
             borderRadius: "30px",
             border: "2px solid blue",
             boxShadow: "5px 5px 10px black",

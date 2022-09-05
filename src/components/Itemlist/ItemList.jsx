@@ -5,8 +5,8 @@ import Item from "../Item/Item";
 const ItemList = ({ productos }) => {
   return (
     <>
-      <Container>
-        <Row>
+      <Container fluid="md">
+        <Row md="auto">
           {productos.map((prod) => (
             <Item className="margin-m" key={prod.id} count={1} {...prod} />
           ))}

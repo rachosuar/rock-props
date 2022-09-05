@@ -1,4 +1,4 @@
                                             -+-ROCK&PROPS-+-
 
-Es una idea que mezcla Aviación con música y otras cosas que tienen Rock.
-todas estan hechas con algodon de la mejor calidad e impresiones laser HD
+Este proyecto de e-comerce realizado en React cuenta con las siguientes partes, una Barra de navegación (NavBar) con el carro de compras incluido (CartWidget), un componente principal llamado itemConteiner que refleja cada uno de los ítems recibidos por el async-mock realizado sobre el archivo data.js. Y otro componente más llamado itemDetailContainer que muestra para cada Id que se pase la imagen y los detalles de cada producto, junto con un contador que se deshabilita cuando alcanza el stock máximo y a su vez ejecuta la función en el componente padre que genera una alerta como si el producto con su cantidad fuese agregado al carrito de compras.
+Como repositorios se utilizan los habituales de React y yo agregué react-bootstrap y sass para los estilos. También agregué un repositorio llamado react-loder-spinner que se mantiene con constantes actualizaciones por lo cual me pareció positivo usarlo.

@@ -2,13 +2,15 @@ import { React, useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 import productos from "../../data/data";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
   let [producto, setProducto] = useState([]);
+  let { categoria, id } = useParams();
 
   const obtenerProductos = () =>
     new Promise((res, rej) => {
-      setTimeout(() => res(productos), 2000);
+      setTimeout(() => res(productos.find((prod) => prod.id === +id)), 2000);
     });
 
   useEffect(() => {
@@ -25,13 +27,13 @@ const ItemDetailContainer = () => {
   let addToCart = (counter) => {
     alert(`${counter} items added`);
   };
-  let detalle = producto.find((prod) => prod.id == 9);
+
   return (
     <>
       {producto.length === 0 ? (
-        <h1>Cargando</h1>
+        <ItemDetail count={1} />
       ) : (
-        <ItemDetail {...detalle} count={1} onAdd={addToCart} />
+        <ItemDetail {...producto} count={1} onAdd={addToCart} />
       )}
     </>
   );

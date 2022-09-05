@@ -3,17 +3,20 @@ import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { NavDropdown } from "react-bootstrap";
+import { NavLink, Link } from "react-router-dom";
 
 import logo from "../../img/logo.jpg";
 import Cartwidget from "./CartWiget";
 
-const Navbars = ({ carrito }) => {
+const Navbars = () => {
   return (
     <>
-      <Navbar variant="light">
+      <Navbar variant="light" sticky="top">
         <Container>
-          <Navbar.Brand href="#home">
-            ROCK&PROPS
+          <Navbar.Brand>
+            <NavLink to="/" className="navbarlink">
+              ROCK&PROPS
+            </NavLink>
             <img
               src={logo}
               width="30"
@@ -24,16 +27,50 @@ const Navbars = ({ carrito }) => {
           </Navbar.Brand>
           <Nav className="me-auto">
             <NavDropdown title="Menu" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#musica">MUSICA</NavDropdown.Item>
-              <NavDropdown.Item href="#rock">ROCK</NavDropdown.Item>
-              <NavDropdown.Item href="#movies">MOVIES</NavDropdown.Item>
+              <NavDropdown.Item as="div">
+                <NavLink
+                  to="/categoria/rock"
+                  className={({ isActive }) =>
+                    isActive ? "claseactivo" : "navbarlink"
+                  }
+                >
+                  ROCK
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item as="div">
+                <NavLink
+                  to="/categoria/props"
+                  className={({ isActive }) =>
+                    isActive ? "claseactivo" : "navbarlink"
+                  }
+                >
+                  PROPS
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item as="div">
+                <NavLink
+                  to="/categoria/movies"
+                  className={({ isActive }) =>
+                    isActive ? "claseactivo" : "navbarlink"
+                  }
+                >
+                  MOVIES
+                </NavLink>
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#tablatalles">
-                TABLA DE TALLES
+              <NavDropdown.Item as="div">
+                <NavLink
+                  to="/tablatalles"
+                  className={({ isActive }) =>
+                    isActive ? "claseactivo" : "navbarlink"
+                  }
+                >
+                  TABLA DE TALLES
+                </NavLink>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Cartwidget carrito={carrito} />
+          <Cartwidget />
         </Container>
       </Navbar>
     </>

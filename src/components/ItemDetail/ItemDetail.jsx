@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
-import { Container, Row, Col, Badge, Form, Image } from "react-bootstrap";
-import Boton from "../Boton/Boton";
-import mediosdepago from "../../img/mercadopago_logos.jpeg";
+import { Container, Row, Col, Image, Spinner } from "react-bootstrap";
+import { Rings } from "react-loader-spinner";
+
+import ItemDetailInfo from "../ItemDetailInfo/ItemDetailInfo";
 
 const ItemDetail = ({
   id,
@@ -25,99 +26,46 @@ const ItemDetail = ({
   return (
     <>
       <Container fluid="xl" className="itemdetail">
-        <Row xl="auto">
-          <Col xl={8}>
-            <Image
-              className="itemdetail__image mt-2 mb-2"
-              src={imagen}
-              fluid={true}
-            />
-          </Col>
-
-          <Col xl={4}>
-            <Row xxl="auto" className="justify-content-md-center m-5 mb-5">
-              <h1> {nombre}</h1>
-            </Row>
-            <Row xl="auto" className="justify-content-md-center m-2 mb-5">
-              <h3>{`Colección: ${coleccion}`}</h3>
-            </Row>
-            <Row xl="auto" className="justify-content-md-center m-2 mb-5">
-              <p className="itemdetail_paragraph">
-                "💣 Diseños originales exclusivos <br />
-                💯 Impresiones láser de altísima definición <br />
-                👕 Algodón 20.1 de alta calidad <br />
-                🚛 Envíos a todo el pais" <br />
-              </p>
-            </Row>
-            <Row className="justify-content-md-center m-2">
-              <Col xs={4}>
-                {counter > 1 ? (
-                  <Boton
-                    color="btn-secondary"
-                    texto="-"
-                    handleClick={() => restCount()}
-                  />
-                ) : (
-                  <Boton color="btn-secondary" disable={true} texto="X" />
-                )}
+        {imagen ? (
+          <>
+            <Row xl="auto">
+              <Col xl={8} className="imagedetail">
+                <Image
+                  className="itemdetail__image mt-5 mb-5"
+                  src={imagen}
+                  fluid={true}
+                  style={{ borderRadius: "100px" }}
+                />
               </Col>
-              <Col xs={4}>
-                <Badge bg="dark" style={{ fontSize: "1.5em" }}>
-                  {counter}
-                </Badge>
-              </Col>
-              <Col xs={4}>
-                {counter !== stock ? (
-                  <Boton
-                    color="btn-secondary"
-                    texto="+"
-                    handleClick={() => sumCount()}
-                  />
-                ) : (
-                  <Boton color="btn-secondary" disable={true} texto="X" />
-                )}
+              <Col xl={4}>
+                <ItemDetailInfo
+                  nombre={nombre}
+                  counter={counter}
+                  stock={stock}
+                  sumCount={sumCount}
+                  restCount={restCount}
+                  price={price}
+                  onAdd={onAdd}
+                />
               </Col>
             </Row>
-            {counter === stock ? (
-              <Row>
-                <Badge bg="warning">No hay mas stock!</Badge>
-              </Row>
-            ) : null}
-            <Row className="justify-content-md-center mb-5 mt-5 pricerow">
-              <Col xs={4}>
-                <Form.Group className="mb-3 ml-2">
-                  <Form.Label column="s">Size</Form.Label>
-                  <Form.Select>
-                    <option>XS</option>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                  </Form.Select>
-                </Form.Group>
-              </Col>
-              <Col xs={6}>
-                <span className="pricetag">{price}</span>
-              </Col>
-            </Row>
-            <Boton
-              xl="auto"
-              color="btn-primary"
-              texto="AGREGAR AL CARRITO"
-              handleClick={() => {
-                onAdd(counter);
-              }}
-            />
-            <h3 className="mt-5">{`Stock:${stock}`}</h3>
-            <img
-              src={mediosdepago}
-              alt="medios de pago"
-              width="350rem"
-              height="100rem"
-              className="mb-2"
-            />
-          </Col>
-        </Row>
+          </>
+        ) : (
+          <Row className="justify-content-sm-center spinercontainer">
+            <Col xs={6}>
+              <Rings
+                height="40rem"
+                width="40rem"
+                color="rgb(85, 89, 220)"
+                radius="6"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+                ariaLabel="rings-loading"
+              />
+            </Col>
+          </Row>
+        )}
       </Container>
     </>
   );
