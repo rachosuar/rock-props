@@ -10,7 +10,7 @@ import producti from "../img/producti.png";
 import productj from "../img/productj.png";
 import productk from "../img/productk.png";
 import productl from "../img/productl.png";
-import productm from "../img/productm.png";
+
 import productn from "../img/productn.png";
 import producto from "../img/producto.png";
 import productp from "../img/productp.png";

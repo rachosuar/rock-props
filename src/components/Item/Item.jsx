@@ -1,6 +1,6 @@
 import React from "react";
 import Boton from "../Boton/Boton";
-import { Container, Row, Col, Card, CardImg } from "react-bootstrap";
+import { Col, Card, CardImg } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Item = ({ nombre, stock, id, imagen, categoria }) => {

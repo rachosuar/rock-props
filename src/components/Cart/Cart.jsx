@@ -16,7 +16,13 @@ const Cart = () => {
     let updateProducts = async () => {
       try {
         // const prod = await obtenerProductos();
-        setCarrito([productos[0], productos[10], productos[20]]);
+        setCarrito([
+          productos[0],
+          productos[10],
+          productos[20],
+          productos[15],
+          productos[36],
+        ]);
       } catch (err) {
         console.log("algo no salió bien...", err);
       }
@@ -41,14 +47,14 @@ const Cart = () => {
             <Col xl={4} className="cartbuttons">
               <Row>
                 <Link to={"/"}>
-                  <Button size="lg" variant="secondary" className="my-2">
+                  <Button size="lg" variant="success" className="my-2">
                     Seguir Comprando
                   </Button>
                 </Link>
               </Row>
               <Row>
                 <Link to={"/"}>
-                  <Button size="lg" variant="secondary" className="my-2">
+                  <Button size="lg" variant="primary" className="my-2">
                     Finalizar Compra
                   </Button>
                 </Link>
@@ -66,7 +72,7 @@ const Cart = () => {
               <Col xl={4} className="cartbuttons">
                 <Row>
                   <Link to={"/"}>
-                    <Button size="lg" variant="secondary" className="my-2">
+                    <Button size="lg" variant="success" className="my-2">
                       Seguir Comprando
                     </Button>
                   </Link>

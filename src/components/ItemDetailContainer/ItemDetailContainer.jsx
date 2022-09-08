@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
   let [producto, setProducto] = useState([]);
-  let { categoria, id } = useParams();
+  let { id } = useParams();
 
   const obtenerProductos = () =>
     new Promise((res, rej) => {
@@ -23,17 +23,14 @@ const ItemDetailContainer = () => {
       }
     };
     updateProducts();
-  }, []);
-  let addToCart = (counter) => {
-    alert(`${counter} items added`);
-  };
+  }, [id]);
 
   return (
     <>
       {producto.length === 0 ? (
         <ItemDetail count={1} />
       ) : (
-        <ItemDetail {...producto} count={1} onAdd={addToCart} />
+        <ItemDetail {...producto} count={1} />
       )}
     </>
   );

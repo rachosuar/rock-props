@@ -3,17 +3,15 @@ import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemlistContainer/ItemsListContainer";
 import Cart from "./components/Cart/Cart";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tablatalles from "./components/Tablatalles/Tablatalles";
 
-import React, { useState } from "react";
+import React from "react";
 function App() {
-  let [carrito, setCarrito] = useState(0);
-
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar carrito={carrito} />
+        <Navbar />
         <Routes>
           <Route
             path="/"

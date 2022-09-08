@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { NavDropdown } from "react-bootstrap";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import logo from "../../img/logo.jpg";
 import Cartwidget from "./CartWiget";
