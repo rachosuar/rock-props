@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Badge } from "react-bootstrap";
 import Boton from "../Boton/Boton";
 
-const ItemCounter = ({ counter, stock, restCount, sumCount, onAdd }) => {
+const ItemCounter = ({ stock, onAdd }) => {
+  let [counter, setCounter] = useState(1);
+  let restCount = () => {
+    setCounter(counter - 1);
+  };
+  let sumCount = () => {
+    setCounter(counter + 1);
+  };
+  let agregarCompra = () => {
+    onAdd(counter);
+  };
   return (
     <>
       <Row className="justify-content-md-center m-2">
         <Col xs={4}>
           {counter > 1 ? (
-            <Boton
-              color="btn-secondary"
-              texto="-"
-              handleClick={() => restCount()}
-            />
+            <Boton color="btn-secondary" texto="-" handleClick={restCount} />
           ) : (
             <Boton color="btn-secondary" disable={true} texto="X" />
           )}
@@ -24,11 +30,7 @@ const ItemCounter = ({ counter, stock, restCount, sumCount, onAdd }) => {
         </Col>
         <Col xs={4}>
           {counter !== stock ? (
-            <Boton
-              color="btn-secondary"
-              texto="+"
-              handleClick={() => sumCount()}
-            />
+            <Boton color="btn-secondary" texto="+" handleClick={sumCount} />
           ) : (
             <Boton color="btn-secondary" disable={true} texto="X" />
           )}
@@ -38,9 +40,7 @@ const ItemCounter = ({ counter, stock, restCount, sumCount, onAdd }) => {
         xl="auto"
         color="btn-primary"
         texto="AGREGAR AL CARRITO"
-        handleClick={() => {
-          onAdd(counter);
-        }}
+        handleClick={agregarCompra}
       />
     </>
   );

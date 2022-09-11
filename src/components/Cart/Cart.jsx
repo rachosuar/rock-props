@@ -1,50 +1,36 @@
-import { React, useState, useEffect } from "react";
+import { React, useContext } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import productos from "../../data/data";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import ItemDetailCart from "../ItemDetailCart/ItemDetailCart";
 
 const Cart = () => {
-  let [carrito, setCarrito] = useState([]);
+  let { cart, deleteProduct, clearProducts } = useContext(CartContext);
 
-  // const obtenerProductos = () =>
-  //   new Promise((res, rej) => {
-  //     setTimeout(() => res(productos), 30000);
-  //   });
-
-  useEffect(() => {
-    let updateProducts = async () => {
-      try {
-        // const prod = await obtenerProductos();
-        setCarrito([
-          productos[0],
-          productos[10],
-          productos[20],
-          productos[15],
-          productos[36],
-        ]);
-      } catch (err) {
-        console.log("algo no salió bien...", err);
-      }
-    };
-    updateProducts();
-  }, []);
-  let removeFromCart = (nombre) => {
-    window.confirm(`wish to removed ${nombre}?`);
-  };
   return (
     <>
-      {carrito.length ? (
+      {cart.length ? (
         <Container fluid="xl" className="cartdetail p-3">
-          <Row xl="auto">
-            {carrito.map((item) => (
-              <ItemDetailCart
-                key={item.id}
-                {...item}
-                removeFromCart={removeFromCart}
-              />
-            ))}
-            <Col xl={4} className="cartbuttons">
+          <Row className="justify-content-sm-center">
+            <Col sm={10}>
+              {cart.map((item) => (
+                <ItemDetailCart
+                  key={item.id + item.price}
+                  count={cart.counter}
+                  {...item}
+                  removeFromCart={deleteProduct}
+                />
+              ))}
+            </Col>
+
+            <Col sm={2} className="cartbuttons">
+              <Row>
+                <h2 className="totalizador">
+                  {`$${cart
+                    .map((item) => item.price * item.counter)
+                    .reduce((a, b) => a + b)},00`}
+                </h2>
+              </Row>
               <Row>
                 <Link to={"/"}>
                   <Button size="lg" variant="success" className="my-2">
@@ -58,6 +44,14 @@ const Cart = () => {
                     Finalizar Compra
                   </Button>
                 </Link>
+                <Button
+                  size="lg"
+                  variant="danger"
+                  className="mt-4"
+                  onClick={clearProducts}
+                >
+                  Vaciar carrito
+                </Button>
               </Row>
             </Col>
           </Row>
@@ -65,15 +59,15 @@ const Cart = () => {
       ) : (
         <>
           <Container fluid="xl" className="cartdetail p-3">
-            <Row xl="auto">
-              <Col xl={8}>
-                <h1 className="noitemscart">No hay items en el carrito</h1>
+            <Row className="justify-content-sm-center">
+              <Col sm={8}>
+                <h1 className="noitemscart">No hay nada en el carrito 🛒</h1>
               </Col>
-              <Col xl={4} className="cartbuttons">
+              <Col sm={4} className="cartbuttons-empty">
                 <Row>
                   <Link to={"/"}>
-                    <Button size="lg" variant="success" className="my-2">
-                      Seguir Comprando
+                    <Button size="lg" variant="success" className="mt-5">
+                      COMPRA AHORA!
                     </Button>
                   </Link>
                 </Row>

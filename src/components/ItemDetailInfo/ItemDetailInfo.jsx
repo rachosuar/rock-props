@@ -1,26 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Row, Form, Badge } from "react-bootstrap";
 
 const ItemDetailInfo = ({
   nombre,
   counter,
   stock,
-  sumCount,
-  restCount,
-  price,
-  onAdd,
-}) => {
-  let [size, setSize] = useState();
-  let [sizeTag, setSizeTag] = useState(false);
 
-  let selectedSize = (e) => {
-    let sizeSelected = e.target.value;
-    let mostrarTag = () => {
-      setSize(sizeSelected);
-      setSizeTag(false);
-    };
-    sizeSelected !== "SIZE" ? mostrarTag() : setSizeTag(true);
-  };
+  price,
+
+  selectSize,
+  sizeTag,
+}) => {
   return (
     <>
       <Row xxl="auto" className="justify-content-md-center m-5 mb-5">
@@ -42,7 +32,7 @@ const ItemDetailInfo = ({
       <Row className="justify-content-md-center mb-5 mt-5 pricerow">
         <Col xs={4}>
           <Form.Group className="mb-3 ml-2">
-            <Form.Select onChange={selectedSize}>
+            <Form.Select onChange={(e) => selectSize(e.target.value)}>
               <option>SIZE</option>
               <option>XS</option>
               <option>S</option>
@@ -54,7 +44,7 @@ const ItemDetailInfo = ({
           </Form.Group>
         </Col>
         <Col xs={6}>
-          <span className="pricetag">{price}</span>
+          <span className="pricetag">{`$${price},00`}</span>
         </Col>
       </Row>
 

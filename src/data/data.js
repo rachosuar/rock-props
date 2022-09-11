@@ -55,7 +55,7 @@ let productos = [
     stock: 5,
     coleccion: "Star Wars",
     categoria: "movies",
-    price: "$ 1300,00",
+    price: 1300,
   },
   {
     id: 2,
@@ -64,7 +64,7 @@ let productos = [
     stock: 3,
     coleccion: "Star Wars",
     categoria: "movies",
-    price: "$ 1800,00",
+    price: 1800,
   },
   {
     id: 3,
@@ -73,7 +73,7 @@ let productos = [
     stock: 5,
     coleccion: "Star Wars",
     categoria: "movies",
-    price: "$ 1300,00",
+    price: 1300,
   },
   {
     id: 4,
@@ -82,7 +82,7 @@ let productos = [
     stock: 10,
     coleccion: "Star Wars",
     categoria: "movies",
-    price: "$ 1400,00",
+    price: 1400,
   },
   {
     id: 5,
@@ -91,7 +91,7 @@ let productos = [
     stock: 2,
     coleccion: "Star Wars",
     categoria: "movies",
-    price: "$ 1900,00",
+    price: 1900,
   },
   {
     id: 6,
@@ -100,7 +100,7 @@ let productos = [
     stock: 15,
     coleccion: "Star Wars",
     categoria: "movies",
-    price: "$ 1300,00",
+    price: 1300,
   },
   {
     id: 7,
@@ -109,7 +109,7 @@ let productos = [
     stock: 6,
     coleccion: "Star Wars",
     categoria: "movies",
-    price: "$ 1300,00",
+    price: 1300,
   },
   {
     id: 8,
@@ -118,7 +118,7 @@ let productos = [
     stock: 7,
     coleccion: "Star Wars",
     categoria: "movies",
-    price: "$ 1300,00",
+    price: 1300,
   },
   {
     id: 9,
@@ -127,7 +127,7 @@ let productos = [
     stock: 4,
     coleccion: "Star Wars",
     categoria: "movies",
-    price: "$ 2000,00",
+    price: 1300,
   },
   {
     id: 10,
@@ -136,7 +136,7 @@ let productos = [
     stock: 4,
     coleccion: "Rock",
     categoria: "rock",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 11,
@@ -145,7 +145,7 @@ let productos = [
     stock: 3,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 12,
@@ -154,7 +154,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 13,
@@ -163,7 +163,7 @@ let productos = [
     stock: 15,
     coleccion: "Rock",
     categoria: "rock",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 14,
@@ -172,7 +172,7 @@ let productos = [
     stock: 6,
     coleccion: "Rock",
     categoria: "rock",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 15,
@@ -181,7 +181,7 @@ let productos = [
     stock: 4,
     coleccion: "Movies",
     categoria: "movies",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 16,
@@ -190,7 +190,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 17,
@@ -199,7 +199,7 @@ let productos = [
     stock: 3,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 18,
@@ -208,7 +208,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 19,
@@ -217,7 +217,7 @@ let productos = [
     stock: 15,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 20,
@@ -226,7 +226,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 21,
@@ -235,7 +235,7 @@ let productos = [
     stock: 15,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 22,
@@ -244,7 +244,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "Props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 23,
@@ -253,7 +253,7 @@ let productos = [
     stock: 3,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 24,
@@ -262,7 +262,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 25,
@@ -271,7 +271,7 @@ let productos = [
     stock: 15,
     coleccion: "Props",
     categoria: "Props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 26,
@@ -280,7 +280,7 @@ let productos = [
     stock: 6,
     coleccion: "Movies",
     categoria: "movies",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 27,
@@ -289,7 +289,7 @@ let productos = [
     stock: 4,
     coleccion: "Movies",
     categoria: "movies",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 28,
@@ -298,7 +298,7 @@ let productos = [
     stock: 4,
     coleccion: "Movies",
     categoria: "movies",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 29,
@@ -307,7 +307,7 @@ let productos = [
     stock: 3,
     coleccion: "Rock",
     categoria: "rock",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 30,
@@ -316,7 +316,7 @@ let productos = [
     stock: 4,
     coleccion: "Rock",
     categoria: "rock",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 31,
@@ -325,7 +325,7 @@ let productos = [
     stock: 15,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 32,
@@ -334,7 +334,7 @@ let productos = [
     stock: 6,
     coleccion: "Rock",
     categoria: "rock",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 33,
@@ -343,7 +343,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 34,
@@ -352,7 +352,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 35,
@@ -361,7 +361,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 36,
@@ -370,7 +370,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 37,
@@ -379,7 +379,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 38,
@@ -388,7 +388,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 39,
@@ -397,7 +397,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 40,
@@ -406,7 +406,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 41,
@@ -415,7 +415,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 42,
@@ -424,7 +424,7 @@ let productos = [
     stock: 3,
     coleccion: "Rock",
     categoria: "rock",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 43,
@@ -433,7 +433,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 44,
@@ -442,7 +442,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 45,
@@ -451,7 +451,7 @@ let productos = [
     stock: 4,
     coleccion: "Props",
     categoria: "props",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 46,
@@ -460,7 +460,7 @@ let productos = [
     stock: 15,
     coleccion: "Rock",
     categoria: "rock",
-    price: "$ 2000,00",
+    price: 2000,
   },
   {
     id: 47,
@@ -469,7 +469,7 @@ let productos = [
     stock: 6,
     coleccion: "Rock",
     categoria: "rock",
-    price: "$ 2000,00",
+    price: 2000,
   },
 ];
 

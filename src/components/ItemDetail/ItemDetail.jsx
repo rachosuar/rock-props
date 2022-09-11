@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { Rings } from "react-loader-spinner";
 import ItemCounter from "../ItemCounter/ItemCounter";
@@ -6,21 +6,30 @@ import mediosdepago from "../../img/mercadopago_logos.jpeg";
 import { Link } from "react-router-dom";
 
 import ItemDetailInfo from "../ItemDetailInfo/ItemDetailInfo";
+import { CartContext } from "../../context/CartContext";
 
-const ItemDetail = ({ id, nombre, imagen, stock, coleccion, price, count }) => {
-  let [counter, setCounter] = useState(count);
-  let [cart, setCart] = useState([]);
+const ItemDetail = ({ id, nombre, imagen, stock, categoria, price }) => {
+  let { addPorducts } = useContext(CartContext);
 
-  let restCount = () => {
-    setCounter(counter - 1);
-  };
-  let sumCount = () => {
-    setCounter(counter + 1);
-  };
+  let [cart, setCart] = useState(false);
+  let [size, setSize] = useState();
+  let [sizeTag, setSizeTag] = useState(false);
+
   let onAdd = (counter) => {
-    alert(`${counter} items where added to the cart!`);
-    let newArr = [...cart, counter];
-    setCart(newArr);
+    if (!size || size === "SIZE") {
+      setSizeTag(true);
+    } else {
+      addPorducts({ counter, id, nombre, imagen, price, size });
+      setCart(true);
+    }
+  };
+  let selectSize = (size) => {
+    if (size !== "SIZE") {
+      setSize(size);
+      setSizeTag(false);
+    } else {
+      setSizeTag(true);
+    }
   };
 
   return (
@@ -40,16 +49,15 @@ const ItemDetail = ({ id, nombre, imagen, stock, coleccion, price, count }) => {
               <Col xl={4}>
                 <ItemDetailInfo
                   nombre={nombre}
-                  counter={counter}
                   stock={stock}
-                  sumCount={sumCount}
-                  restCount={restCount}
                   price={price}
                   onAdd={onAdd}
+                  selectSize={selectSize}
+                  sizeTag={sizeTag}
                 />
-                {cart.length ? (
+                {cart ? (
                   <>
-                    <Link to="/home">
+                    <Link to={`/categoria/${categoria}`}>
                       <Button variant="primary" className="m-3">
                         {" "}
                         SEGUIR COMPRANDO{" "}
@@ -65,10 +73,11 @@ const ItemDetail = ({ id, nombre, imagen, stock, coleccion, price, count }) => {
                 ) : (
                   <ItemCounter
                     onAdd={onAdd}
-                    counter={counter}
                     stock={stock}
-                    sumCount={sumCount}
-                    restCount={restCount}
+                    cart={cart}
+                    size={size}
+                    imagen={imagen}
+                    nombre={nombre}
                   />
                 )}
                 <img

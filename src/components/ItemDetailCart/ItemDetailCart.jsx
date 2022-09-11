@@ -4,28 +4,41 @@ import { Link } from "react-router-dom";
 
 const ItemDetailCart = ({
   nombre,
-  precio,
+  price,
   imagen,
   removeFromCart,
-  categoria,
+
   id,
+  counter,
+  size,
 }) => {
   return (
-    <Col xl={8} className="productdetail">
+    <Col xl={10} className="productdetail">
       <Container fluid="auto" className="cartitemcontainer">
-        <Row className="justify-content-sm-cente cartitem">
+        <Row className="justify-content-sm-center cartitem">
           <Col xs={2}>
             <Link to={`/item/${id}`}>
               <Image src={imagen} roundedCircle="true" className="cartimage" />
             </Link>
           </Col>
-          <Col xs={5}>
+          <Col xs={4} className="m-2">
             <h3> {nombre} </h3>
+            <h4>Size:{size}</h4>
           </Col>
-          <Col xs={3}>Cantidad: 1</Col>
-          <Col xs={2}>
-            <p className="deleteitem" onClick={() => removeFromCart(nombre)}>
-              🗑
+          <Col xs={2} className="">
+            Cantidad: {counter}
+          </Col>
+          <Col xs={2} className="">
+            {" "}
+            <p>{`$${price * counter}`}</p>
+          </Col>
+
+          <Col xs={1}>
+            <p
+              className="deleteitem"
+              onClick={() => removeFromCart(id, nombre, size)}
+            >
+              ❌
             </p>
           </Col>
         </Row>
