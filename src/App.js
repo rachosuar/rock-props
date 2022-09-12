@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tablatalles from "./components/Tablatalles/Tablatalles";
 import { CartProvider } from "./context/CartContext";
+import Home from "./components/Home/Home";
 
 import React from "react";
 function App() {

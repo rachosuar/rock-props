@@ -75,3 +75,19 @@
 .totalizador {
   font-size: 1.6rem;
 }
+.cartdetailpopup {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(93, 48, 155, 0.542),
+    rgba(84, 39, 206, 0.541)
+  );
+  border: 2px solid blue;
+  transform: translateX(-1rem);
+  min-width: 115%;
+  border: 1px solid #01010c;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 30px;
+  color: lightblue;
+}

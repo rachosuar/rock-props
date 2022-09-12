@@ -5,6 +5,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   let [cart, setCart] = useState([]);
   let [notificacion, setNotificacion] = useState([]);
+  let [showCart, setShowCart] = useState(false);
 
   let clearNotifications = () => {
     setNotificacion([]);
@@ -53,9 +54,25 @@ export const CartProvider = ({ children }) => {
     window.confirm(`Wish to remove ${cart.length} items??`) && setCart([]);
   };
 
+  let mostrarCart = () => {
+    setShowCart(true);
+  };
+  let ocultarCart = () => {
+    setShowCart(false);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, addPorducts, deleteProduct, clearProducts, notificacion }}
+      value={{
+        cart,
+        addPorducts,
+        deleteProduct,
+        clearProducts,
+        notificacion,
+        mostrarCart,
+        showCart,
+        ocultarCart,
+      }}
     >
       {children}
     </CartContext.Provider>
