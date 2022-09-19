@@ -1,25 +1,24 @@
 import { React, useState, useEffect, useContext } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Notificacion from "../Notificacion/Notificacion";
-import productos from "../../data/data";
+import { db } from "../../utils/firebase";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import { getDoc, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   let { notificacion } = useContext(CartContext);
   let [producto, setProducto] = useState([]);
   let { id } = useParams();
 
-  const obtenerProductos = () =>
-    new Promise((res, rej) => {
-      setTimeout(() => res(productos.find((prod) => prod.id === +id)), 2000);
-    });
-
   useEffect(() => {
     let updateProducts = async () => {
       try {
-        const prod = await obtenerProductos();
-        setProducto(prod);
+        const query = doc(db, "items", `${id}`);
+        let response = await getDoc(query);
+        let productos = { ...response.data(), id: response.id };
+
+        setProducto(productos);
       } catch (err) {
         console.log("algo no salió bien...", err);
       }

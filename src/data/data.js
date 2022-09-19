@@ -14,9 +14,9 @@ import productl from "../img/productl.png";
 import productn from "../img/productn.png";
 import producto from "../img/producto.png";
 import productp from "../img/productp.png";
-import airbus1 from "../img/airbus1.png";
-import bbanshees1 from "../img/bbanshees1.png";
-import bbanshees2 from "../img/bbanshees2.png";
+// import airbus1 from "https://firebasestorage.googleapis.com/v0/b/roackandpropsapp.appspot.com/o/ryp%20img%2Fairbus1.png?alt=media&token=905f0137-03f1-43e0-8332-f4c47e2c0b01";
+// import bbanshees1 from "https://firebasestorage.googleapis.com/v0/b/roackandpropsapp.appspot.com/o/ryp%20img%2Fbbanshees1.png?alt=media&token=378f608a-c8d2-41b4-9772-f8b612b64282";
+// import bbanshees2 from "https://firebasestorage.googleapis.com/v0/b/roackandpropsapp.appspot.com/o/ryp%20img%2Fbbanshees2.png?alt=media&token=ea6a056d-9b47-479d-9ed9-4940b37c18e1";
 import bbanshees3 from "../img/bbanshees3.png";
 import bbanshees4 from "../img/bbanshees4.png";
 import bbanshees5 from "../img/bbanshees5.png";
@@ -183,33 +183,33 @@ let productos = [
     categoria: "movies",
     price: 2000,
   },
-  {
-    id: 16,
-    nombre: "AIRBUS",
-    imagen: airbus1,
-    stock: 4,
-    coleccion: "Props",
-    categoria: "props",
-    price: 2000,
-  },
-  {
-    id: 17,
-    nombre: "BURUMA BANSHEES",
-    imagen: bbanshees1,
-    stock: 3,
-    coleccion: "Props",
-    categoria: "props",
-    price: 2000,
-  },
-  {
-    id: 18,
-    nombre: "BURUMA BANSHEES",
-    imagen: bbanshees2,
-    stock: 4,
-    coleccion: "Props",
-    categoria: "props",
-    price: 2000,
-  },
+  // {
+  //   id: 16,
+  //   nombre: "AIRBUS",
+  //   imagen: airbus1,
+  //   stock: 4,
+  //   coleccion: "Props",
+  //   categoria: "props",
+  //   price: 2000,
+  // },
+  // {
+  //   id: 17,
+  //   nombre: "BURUMA BANSHEES",
+  //   imagen: bbanshees1,
+  //   stock: 3,
+  //   coleccion: "Props",
+  //   categoria: "props",
+  //   price: 2000,
+  // },
+  // {
+  //   id: 18,
+  //   nombre: "BURUMA BANSHEES",
+  //   imagen: bbanshees2,
+  //   stock: 4,
+  //   coleccion: "Props",
+  //   categoria: "props",
+  //   price: 2000,
+  // },
   {
     id: 19,
     nombre: "BURUMA BANSHEES",

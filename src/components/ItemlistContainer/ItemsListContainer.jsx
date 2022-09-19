@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ItemList from "../Itemlist/ItemList";
-import productos from "../../data/data";
+import { db } from "../../utils/firebase";
 import Spiner from "../Spiner/Spiner";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
 const ItemListContainer = () => {
   let [product, setProducto] = useState([]);
   let { id } = useParams();
 
-  const obtenerProductos = () =>
-    new Promise((res, rej) => {
-      setTimeout(() => res(productos), 2000);
-    });
-
   useEffect(() => {
-    let updateProducts = async () => {
-      try {
-        const prod = await obtenerProductos();
-        id
-          ? setProducto(prod.filter((item) => item.categoria === id))
-          : setProducto(prod);
-      } catch (err) {
-        console.error("error", err);
+    const obtenerProductos = async () => {
+      let consulta;
+      if (id) {
+        consulta = query(
+          collection(db, "items"),
+          where("categoria", "==", `${id}`)
+        );
+      } else {
+        consulta = collection(db, "items");
       }
+      let response = await getDocs(consulta);
+      let productos = response.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
+      setProducto(productos);
     };
-    updateProducts();
+    obtenerProductos();
   }, [id]);
 
   return (
