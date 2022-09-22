@@ -7,8 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tablatalles from "./components/Tablatalles/Tablatalles";
 import { CartProvider } from "./context/CartContext";
 import Home from "./components/Home/Home";
-
 import React from "react";
+import Checkout from "./components/Checkout/Checkout";
 function App() {
   return (
     <CartProvider>
@@ -31,6 +31,7 @@ function App() {
               path="*"
               element={<ItemListContainer className="itemlist" />}
             />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </div>
       </BrowserRouter>

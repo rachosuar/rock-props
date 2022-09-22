@@ -49,11 +49,6 @@ const ItemDetailInfo = ({
       </Row>
 
       <h3 className="mt-5">{`Stock:${stock}`}</h3>
-      {counter === stock ? (
-        <Row>
-          <Badge bg="warning">No hay mas stock!</Badge>
-        </Row>
-      ) : null}
     </>
   );
 };

@@ -1,8 +1,8 @@
 .cartdetail {
   background-image: linear-gradient(
     to right bottom,
-    rgb(92, 48, 155),
-    rgb(83, 39, 206)
+    rgb(110, 50, 241),
+    rgb(206, 194, 239)
   );
   border: 4px solid #01010c;
   min-height: 30rem;
@@ -78,16 +78,16 @@
 .cartdetailpopup {
   background-image: linear-gradient(
     to right bottom,
-    rgba(93, 48, 155, 0.542),
-    rgba(84, 39, 206, 0.541)
+    rgba(144, 108, 194, 0.542),
+    rgba(74, 56, 121, 0.541)
   );
   border: 2px solid blue;
   transform: translateX(-1rem);
-  min-width: 115%;
+  min-width: 110%;
   border: 1px solid #01010c;
   margin-top: 0.5rem;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border-radius: 30px;
   color: lightblue;
 }

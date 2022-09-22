@@ -43,7 +43,7 @@ const Cartwidget = () => {
                   <Popover.Body style={{ backgroundColor: "rgb(85, 89, 220)" }}>
                     {cart.map((item) => (
                       <PopoverCartItem
-                        key={item.id * item.price * item.counter}
+                        key={`${item.id}+${item.size}`}
                         count={cart.counter}
                         {...item}
                       />

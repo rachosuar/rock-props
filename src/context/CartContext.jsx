@@ -53,12 +53,22 @@ export const CartProvider = ({ children }) => {
   let clearProducts = () => {
     window.confirm(`Wish to remove ${cart.length} items??`) && setCart([]);
   };
+  let clearProductsAfter = () => {
+    setCart([]);
+  };
 
   let mostrarCart = () => {
     setShowCart(true);
   };
   let ocultarCart = () => {
     setShowCart(false);
+  };
+  let showTotal = () => {
+    if (cart.length > 0) {
+      return cart
+        .map((item) => item.price * item.counter)
+        .reduce((a, b) => a + b);
+    }
   };
 
   return (
@@ -72,6 +82,8 @@ export const CartProvider = ({ children }) => {
         mostrarCart,
         showCart,
         ocultarCart,
+        clearProductsAfter,
+        showTotal,
       }}
     >
       {children}

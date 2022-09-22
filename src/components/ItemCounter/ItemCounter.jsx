@@ -35,6 +35,13 @@ const ItemCounter = ({ stock, onAdd }) => {
             <Boton color="btn-secondary" disable={true} texto="X" />
           )}
         </Col>
+        <Col xs={4} className="mt-3">
+          {counter === stock ? (
+            <Row>
+              <Badge bg="warning">No hay mas stock!</Badge>
+            </Row>
+          ) : null}
+        </Col>
       </Row>
       <Boton
         xl="auto"

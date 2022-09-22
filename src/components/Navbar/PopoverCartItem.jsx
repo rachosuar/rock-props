@@ -5,10 +5,10 @@ const PopoverCartItem = ({ imagen, nombre, counter, size }) => {
   return (
     <Container className="cartdetailpopup">
       <Row className="justify-content-sm-center">
-        <Col md={1} style={{ alignSelf: "center" }}>
+        <Col xs="auto" style={{ alignSelf: "center" }}>
           {counter}
         </Col>
-        <Col>
+        <Col xs="auto">
           <Image
             src={imagen}
             roundedCircle={true}
@@ -17,13 +17,10 @@ const PopoverCartItem = ({ imagen, nombre, counter, size }) => {
             style={{ alignSelf: "center", padding: "0", margin: "0" }}
           />
         </Col>
-        <Col style={{ alignSelf: "center", padding: "0", margin: "0" }}>
+        <Col xs={3} style={{ alignSelf: "center", padding: "0", margin: "0" }}>
           {nombre}
         </Col>
-        <Col
-          md={1}
-          style={{ alignSelf: "center", transform: "translateX(-1rem)" }}
-        >
+        <Col xs="auto" style={{ alignSelf: "center" }}>
           {size}
         </Col>
       </Row>
