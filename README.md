@@ -20,8 +20,12 @@ de React de Coderhouse.
 
 ### Librerias:
 
-- [react-bootstrap] (https://www.npmjs.com/package/react-bootstrap)
-- [react-dom] (https://www.npmjs.com/package/react-dom)
-- [firebase] (https://www.npmjs.com/package/firebase)
-- [react-loader-spinner] (https://www.npmjs.com/package/react-loader-spinner)
-- [sass] (https://www.npmjs.com/package/sass)
+- react-bootstrap (https://www.npmjs.com/package/react-bootstrap)
+- react-dom (https://www.npmjs.com/package/react-dom)
+- firebase (https://www.npmjs.com/package/firebase)
+- react-loader-spinner (https://www.npmjs.com/package/react-loader-spinner)
+- sass (https://www.npmjs.com/package/sass)
+
+### Navegación:
+
+![demo](media/demo.gif)
