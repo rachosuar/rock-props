@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button, Alert } from "react-bootstrap";
 
-const Checkout = ({ finalizarCompra }) => {
+const Checkout = ({ finalizarCompra, valError }) => {
+  console.log(valError);
   return (
     <>
       <Container>
@@ -29,10 +30,19 @@ const Checkout = ({ finalizarCompra }) => {
               placeholder="name@example.com"
             />
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Telefono</Form.Label>
             <Form.Control required type="text" placeholder="11-12345678" />
           </Form.Group>
+          {valError.position && valError.position === 1 ? (
+            <Alert variant="danger" as="div">
+              {valError.text}
+            </Alert>
+          ) : null}
+          {valError.position && valError.position === 2 ? (
+            <Alert variant="danger">{valError.text}</Alert>
+          ) : null}
           <Button variant="primary" type="submit">
             Finalizar Compra!
           </Button>

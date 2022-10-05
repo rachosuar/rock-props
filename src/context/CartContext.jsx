@@ -44,11 +44,9 @@ export const CartProvider = ({ children }) => {
       setTimeout(clearNotifications, 3000);
     }
   };
-  let deleteProduct = (id, nombre, size) => {
-    if (window.confirm(`wish to remove ${nombre}?`)) {
-      let newArr = cart.filter((item) => item.id !== id || item.size !== size);
-      setCart(newArr);
-    }
+  let deleteProduct = (id, size) => {
+    let newArr = cart.filter((item) => item.id !== id || item.size !== size);
+    setCart(newArr);
   };
   let clearProducts = () => {
     window.confirm(`Wish to remove ${cart.length} items??`) && setCart([]);

@@ -9,20 +9,17 @@ import { db } from "../../utils/firebase";
 import { getDate } from "../../utils/firebase";
 
 const Cart = () => {
-  let {
-    cart,
-    deleteProduct,
-    clearProducts,
-    clearProductsAfter,
-    showTotal,
-  } = useContext(CartContext);
+  let { cart, deleteProduct, clearProducts, clearProductsAfter, showTotal } =
+    useContext(CartContext);
   let [checkout, setCheckout] = useState(false);
   let [success, setSucces] = useState(false);
   let [buyer, setBuyer] = useState({});
   let [idOrder, setIdOrder] = useState();
+  let [valError, setValError] = useState({ position: 0, text: "" });
 
   let finalizarCompra = (e) => {
     e.preventDefault();
+    setValError({ position: 0, text: "" });
     let newOrder = { buyer: {}, items: {} };
     if (
       e.target[1].value === e.target[2].value &&
@@ -38,21 +35,21 @@ const Cart = () => {
       setBuyer(newBuyer);
       newOrder = {
         buyer: { ...buyer },
-        items: { ...cart },
+        items: [...cart],
         date: getDate(),
         total: showTotal(),
       };
-    } else if (buyer.email !== buyer.repemail) {
-      alert("los emails no coinciden!");
-    } else {
-      alert("Revise el telefono!");
+
+      const orderColecction = collection(db, "orders");
+      addDoc(orderColecction, newOrder).then(async ({ id }) => {
+        await successOperation();
+        setIdOrder(id);
+      });
+    } else if (e.target[1].value !== e.target[2].value) {
+      setValError({ position: 1, text: "Los emails no coinciden!" });
+    } else if (e.target[3].value.length < 6 || e.target[3].value.length > 10) {
+      setValError({ position: 2, text: "Revise el telefono!" });
     }
-    const orderColecction = collection(db, "orders");
-    addDoc(orderColecction, newOrder).then(async ({ id }) => {
-      await successOperation();
-      setIdOrder(id);
-    });
-    console.log(newOrder);
   };
 
   let successOperation = () => {
@@ -99,7 +96,7 @@ const Cart = () => {
       >
         <Offcanvas.Header closeButton />
         <Offcanvas.Title>CHECKOUT</Offcanvas.Title>
-        <Checkout finalizarCompra={finalizarCompra} />
+        <Checkout finalizarCompra={finalizarCompra} valError={valError} />
       </Offcanvas>
       :
       {cart.length ? (

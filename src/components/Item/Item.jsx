@@ -3,7 +3,7 @@ import Boton from "../Boton/Boton";
 import { Col, Card, CardImg } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Item = ({ nombre, stock, id, imagen, categoria }) => {
+const Item = ({ nombre, stock, id, imagen }) => {
   return (
     <>
       <Col>
