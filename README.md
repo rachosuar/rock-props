@@ -1,4 +1,4 @@
-# **-:scull:-ROCK&PROPS-:scull:-**
+# **-:💀:-ROCK&PROPS-:💀:-**
 
 ![logo](src/img/logo.jpg)
 
