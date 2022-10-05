@@ -8,6 +8,7 @@ de React de Coderhouse.
 > > #### Importante
 > >
 > > Recuerde instalar los repositorios despues de la descarga.
+> > `npm install`
 
 ### Componentes:
 
