@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
 
 const Checkout = ({ finalizarCompra, valError }) => {
-  console.log(valError);
   return (
     <>
       <Container>
